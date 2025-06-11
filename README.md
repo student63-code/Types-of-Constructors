@@ -58,3 +58,17 @@ class Vehicle {
 Notice how the output shows "Vehicle constructor called" before "Car constructor called" even when we only wrote new Car(). This happens because every constructor in a child class must ensure its parent is properly initialized first. If you don't explicitly call a parent constructor using super(), Java automatically inserts a call to the parent's default constructor as the very first action.
 This constructor chaining ensures that objects are built from the ground up, establishing the foundation before adding specialized features. Think of it like building a house - you must pour the foundation before you can frame the walls, and you must frame the walls before you can add the roof. Each constructor in the inheritance hierarchy is responsible for initializing its own piece of the object.
 Understanding these fundamentals gives you the foundation to use constructors effectively in your Java programs. You'll find that well-designed constructors make your classes easier to use and help prevent objects from being created in invalid states. The key is to think about what information is absolutely necessary to create a meaningful object, what can have sensible defaults, and how to provide flexibility for different use cases while maintaining consistency in how objects are initialized.1 / 2RetryClaude can make mistakes. Please double-check responses.
+
+Types of Constructors
+Default Constructor: Takes no parameters and provides default initialization.
+Parameterized Constructor: Takes parameters to initialize object with specific values.
+Constructor Overloading
+You can have multiple constructors with different parameter lists:
+Using Constructors
+Constructor Chaining with this()
+You can call one constructor from another using this():
+Important Notes
+Automatic Default Constructor: If you don't write any constructor, Java automatically provides a no-argument constructor. However, if you write any constructor, the automatic default constructor is not provided.
+Constructor vs Method: Constructors are called automatically during object creation, while methods must be called explicitly. Constructors cannot be inherited or overridden, but they can be overloaded.
+Access Modifiers: Constructors can have access modifiers (public, private, protected) to control object creation. Private constructors are often used in singleton patterns.
+This foundation covers the essential concepts you need to understand and use constructors effectively in Java programming.
