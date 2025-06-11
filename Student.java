@@ -1,17 +1,11 @@
- public class Student {
+public class Student {
     private String name;
     private int age;
     
-    // Default constructor
-    public Student() {
-        name = "Unknown";
-        age = 0;
-    }
-    
     // Parameterized constructor
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Student(String studentName, int studentAge) {
+        name = studentName;
+        age = studentAge;
     }
     
     // Getter methods
@@ -41,26 +35,32 @@
     
     // Main method to test the class
     public static void main(String[] args) {
-        // Creating object using default constructor
-        Student student1 = new Student();
-        System.out.println("Student 1 (Default Constructor):");
+        // Creating objects using parameterized constructor
+        // Note: Cannot use default constructor as it's not defined
+        Student student1 = new Student("Alice Johnson", 20);
+        Student student2 = new Student("Bob Smith", 19);
+        Student student3 = new Student("Carol Davis", 21);
+        
+        System.out.println("Student 1:");
         student1.displayInfo();
         
-        // Creating object using parameterized constructor
-        Student student2 = new Student("Alice Johnson", 20);
-        System.out.println("Student 2 (Parameterized Constructor):");
+        System.out.println("Student 2:");
         student2.displayInfo();
         
+        System.out.println("Student 3:");
+        student3.displayInfo();
+        
         // Modifying student1 using setter methods
-        student1.setName("Bob Smith");
-        student1.setAge(19);
+        student1.setName("Alice Brown");
+        student1.setAge(22);
         System.out.println("Student 1 (After modification):");
         student1.displayInfo();
         
         // Using getter methods
         System.out.println("Student 2's name: " + student2.getName());
         System.out.println("Student 2's age: " + student2.getAge());
+        
+        // This would cause a compilation error because no default constructor exists:
+        // Student student4 = new Student(); // Error!
     }
 }
-
-
